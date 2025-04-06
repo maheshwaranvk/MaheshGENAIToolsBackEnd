@@ -81,26 +81,7 @@ public class FeatureFileGenerator {
         return "[Context]\n" +
                 "- Given Manual Testcase should be converted into Feature File\n" +
                 "- Test Steps:\n" +
-                "Create two users sender, receiver\n" +
-                "sender have permissions to view confidential student and receiver doesnt have\n" +
-                "caller navigates to Receiver's chat\n" +
-                "caller clicks attachment button\n" +
-                "caller selects 'Students' from attachment button. Student list screen should open\n" +
-                "caller selects student 'Ragu' from the list. Caller verifies the student'Ragu' is added a link in chatbox\n" +
-                "caller clicks send button\n" +
-                "receiver verifies the hyperlink student message named 'Ragu'\n" +
-                "receiver clicks on the hyperlink student message named 'Ragu'\n" +
-                "receiver verifies the student 'Ragu' details\n\n" +
-                "Create two users sender, receiver\n" +
-                "sender have permissions to view confidential student and receiver doesnt have\n" +
-                "caller navigates to Receiver's chat\n" +
-                "caller clicks attachment button\n" +
-                "caller selects 'Students' from attachment button. Student list screen should open\n" +
-                "caller selects student 'Raju' from the list. Caller verifies the student'Raju' is added a link in chatbox\n" +
-                "caller clicks send button\n" +
-                "receiver verifies the hyperlink student message named 'Raju'\n" +
-                "receiver clicks on the hyperlink student message named 'Raju'\n" +
-                "receiver verifies the student 'Raju' details and all details were present as '*****'\n\n" +
+                testSteps +
                 "- The Feature File generate will be used by Automation Team\n" +
                 "- Given Manual Testcase is for a Communication application\n\n" +
                 "[Instruction]\n" +
@@ -109,8 +90,10 @@ public class FeatureFileGenerator {
                 "- Users creation step should have a Data Table for userName, firstName, lastName, location, provider, canViewConfidential\n" +
                 "- Provider can be either 'Airtel', 'JIO', 'Vodaphone'\n" +
                 "- Each Scenario should have a tag name which should be written in pascal notation\n" +
+                "- if multiple scenarios were generated with examples, tag name should be above each examples"+
+                "- if you have a variable which have more than one value, then go for Sceanrio Outline and Examples. Otherwise stay with Scenarios"+
                 "- Since similar steps exist for two students, convert it into Scenario Outline with Examples\n" +
-                "- Add a Student creation step in background as a Data Table with studentName, studentRollNumber, studentDepartment, studentDOB, isConfidentialStudent\n" +
+                "- Add a Student creation step in background if testSteps have the word 'Student' as a Data Table with studentName, studentRollNumber, studentDepartment, studentDOB, isConfidentialStudent\n" +
                 "- Verification steps should show actual data for sender and masked data (***) for receiver\n\n" +
                 "- Output should be without \n but it should be in proper gherkin format"+
                 "[Required Output Format]\n" +
